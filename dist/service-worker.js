@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.830d6ab10a8bb5058959f8ba18d45139.js"
+  "/precache-manifest.2b603bafd4c519adb38ecaa515e7da32.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "projek-app"});
