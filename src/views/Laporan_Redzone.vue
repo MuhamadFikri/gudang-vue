@@ -8,8 +8,8 @@
               <v-card color="blue-grey darken-2" class="white--text">
                 <v-card-title primary-title>
                   <div>
-                    <div class="headline">[Nama Toko] [ Zona {{i.nama}} ]</div>
-                    <span>[Nanti disini alamat toko nya]</span>
+                    <div class="headline">{{i.nama_toko}}</div>
+                    <span>{{i.alamat_toko}}</span>
                   </div>
                 </v-card-title>
                 <v-card-actions>
@@ -26,6 +26,7 @@
 
 
 <script>
+import axios from "axios"
 export default {
   name: "laporanredzone",
   data() {
@@ -39,14 +40,20 @@ export default {
         { text: "Extra large (24px)", value: "xl" }
       ],
       zona: [
-        { id: 1, nama: "A" },
-        { id: 2, nama: "A" },
-        { id: 3, nama: "B" },
-        { id: 4, nama: "B" },
-        { id: 5, nama: "C" },
-        { id: 6, nama: "C" }
+
       ]
     };
+  },
+  created() {
+    axios.get('http://ud-thoha-rest.site/api/toko', {
+      headers: { 
+        udthoha_token: "szQR6XBteZjmTGq0onbc5"
+        // 'Content-type': 'application/json'
+      }
+    }).then(res => {
+      console.log(res.data.data)
+      this.zona = res.data.data;
+    })
   },
   methods: {
     lihatToko(id) {
@@ -56,5 +63,6 @@ export default {
       });
     }
   }
+  
 };
 </script>
