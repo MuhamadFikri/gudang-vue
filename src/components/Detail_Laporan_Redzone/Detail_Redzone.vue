@@ -16,6 +16,9 @@
           </template>
         </v-flex>
       </v-layout>
+      <v-btn @click="tambah()" dark fab fixed bottom right color="pink">
+            <v-icon>add</v-icon>
+          </v-btn>
     </v-container>
   </v-layout>
 </template>
@@ -40,7 +43,6 @@ export default {
         { text: "Kategori", value: "kategori" },
         { text: "Jumlah Barang", value: "jumlah" }
       ],
-      
     };
   },
   created() {
@@ -57,6 +59,12 @@ export default {
         this.barang = res.data.data;
         console.log(res.data.data)
       })
+  },
+  methods:{
+    tambah(){
+      this.$router.push({name: "tambahbarang", params:{id: 1}
+      });
+    }
   }
 };
 </script>

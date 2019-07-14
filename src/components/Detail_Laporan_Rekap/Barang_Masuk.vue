@@ -15,6 +15,9 @@
             </v-data-table>
           </template>
         </v-flex>
+        <v-btn @click="tambah()" dark fab fixed bottom right color="pink">
+            <v-icon>add</v-icon>
+          </v-btn>
       </v-layout>
     </v-container>
   </v-layout>
@@ -52,6 +55,12 @@ export default {
       console.log(res)
       this.barang = res.data.data;
     })
+  },
+  methods:{
+    tambah(){
+      this.$router.push({name: "tambahbarang", params:{id: 1}
+      });
+    }
   }
 }
 </script>

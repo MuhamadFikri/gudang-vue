@@ -35,9 +35,19 @@ export default new Router({
           component: () => import( /* webpackChunkName: "barangmasuk" */ './components/Detail_Laporan_Rekap/Barang_Masuk.vue')
         },
         {
+          path: '/tambahbarangmasuk/:id',
+          name: 'tambahbarang',
+          component: () => import( /* webpackChunkName: "tambahbarangmasuk" */ './components/Detail_Laporan_Rekap/Tambah_Barang_Masuk.vue')
+        },
+        {
           path: '/redzone/:id',
           name: 'redzone',
           component: () => import( /* webpackChunkName: "redzone" */ './components/Detail_Laporan_Redzone/Detail_Redzone.vue')
+        },
+        {
+          path: '/tambahbarang/:id',
+          name: 'tambahbarang',
+          component: () => import( /* webpackChunkName: "tambahbarang" */ './components/Detail_Laporan_Redzone/Tambah_Barang.vue')
         },
       ]
     },
